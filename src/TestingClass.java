@@ -23,5 +23,7 @@ public class TestingClass {
         lstNew.pushTop(n5);
 
         lstNew.printList();
+        System.out.println(lstNew.head.getKey());
+        System.out.println(lstNew.tail.getKey());
     }
 }

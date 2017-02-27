@@ -25,8 +25,8 @@ public class MyLinkedList {
 
             }
             else{
-                nd.setNextNode(head.getNextNode());
-                head.setNextNode(nd);
+                nd.setNextNode(head);
+                head= nd;
 
             }
         }
@@ -45,7 +45,7 @@ public class MyLinkedList {
 
         public void printList(){
             Node curr = head;
-            while(curr!=null && curr.getNextNode()!=null){
+            while(curr!=tail){
                 System.out.println(curr.getKey());
                 curr = curr.getNextNode();
             }
