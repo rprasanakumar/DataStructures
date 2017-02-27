@@ -31,21 +31,25 @@ public class MyLinkedList {
             }
         }
 
+
+
         public void pushBack(Node nd){
 
             if(tail==null){
                 nd.setNextNode(null);
-                tail.setNextNode(nd);;
+                tail=nd;
+                head = nd;
             }
             else{
                 tail.setNextNode(nd);
                 nd.setNextNode(null);
+                tail = nd;
             }
         }
 
         public void printList(){
             Node curr = head;
-            while(curr!=tail){
+            while(curr!=null){
                 System.out.println(curr.getKey());
                 curr = curr.getNextNode();
             }
