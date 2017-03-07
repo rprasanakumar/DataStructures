@@ -9,21 +9,23 @@ public class TestingClass {
 
         MyLinkedList lstNew = new MyLinkedList();
 
-        Node n =  new Node( 3);
-        Node n1 =  new Node( 4);
-        Node n2 =  new Node( 5);
-        Node n3 =  new Node( 6);
-        Node n4 =  new Node( 7);
-        Node n5 =  new Node( 8);
-        lstNew.pushTop(n);
-        lstNew.pushTop(n1);
-        lstNew.pushTop(n2);
-        lstNew.pushTop(n3);
-        lstNew.pushTop(n4);
-        lstNew.pushTop(n5);
-
+//        Node n =  new Node( 3);
+//        Node n1 =  new Node( 4);
+//        Node n2 =  new Node( 5);
+//        Node n3 =  new Node( 6);
+//        Node n4 =  new Node( 7);
+//        Node n5 =  new Node( 8);
+        lstNew.pushTop(lstNew.getNode(3));
+        lstNew.pushTop(lstNew.getNode(4));
+        lstNew.pushTop(lstNew.getNode(5));
+        lstNew.pushTop(lstNew.getNode(6));
+        lstNew.pushTop(lstNew.getNode(7));
+        lstNew.pushTop(lstNew.getNode(8));
+        lstNew.addAfter(9,3);
+       lstNew.deleteThisElement(9);
         lstNew.printList();
         System.out.println(lstNew.head.getKey());
         System.out.println(lstNew.tail.getKey());
+
     }
 }
