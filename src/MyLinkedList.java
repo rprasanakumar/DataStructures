@@ -1,3 +1,6 @@
+import java.util.Iterator;
+import java.util.function.Consumer;
+
 /**
  * Created by prasanna Kumar on 2/24/2017.
  * This is the implementation of LinkList
@@ -114,6 +117,11 @@ public class MyLinkedList {
 
         }
 
+        public Iterator Iterator(){
+
+            return  new Iterator();
+        }
+
      class Node{
 
         private int key;
@@ -144,6 +152,63 @@ public class MyLinkedList {
 
 
 }
+
+    class Iterator implements java.util.Iterator<Node>{
+
+        Node curr;
+
+        Iterator(){
+            curr =head;
+        }
+
+        @Override
+        public boolean hasNext() {
+
+            if(curr!=null ){
+                return true;
+            }
+            return false;
+        }
+
+        @Override
+        public Node next() {
+            if(curr!=null){
+                Node r_node =curr;
+                curr = curr.nextNode;
+                return r_node;
+            }
+            return curr;
+        }
+
+        @Override
+        public void remove() {
+
+            Node tmp = head;
+            if(curr==tmp){
+                head = curr.getNextNode();
+                curr=null;
+            }
+            while(tmp!=null ){
+
+                if(curr!=null && tmp.getNextNode()==curr){
+                    tmp.nextNode=curr.nextNode;
+                    break;
+                }
+
+                tmp = tmp.nextNode;
+            }
+
+            if(curr==tail){
+                tail = tmp.nextNode;
+            }
+
+        }
+
+        @Override
+        public void forEachRemaining(Consumer<? super Node> action) {
+
+        }
+    }
 
 
 

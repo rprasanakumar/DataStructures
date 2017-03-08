@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 /**
  * Created by prass on 2/24/2017.
  *
@@ -22,10 +24,17 @@ public class TestingClass {
         lstNew.pushTop(lstNew.getNode(7));
         lstNew.pushTop(lstNew.getNode(8));
         lstNew.addAfter(9,3);
-       lstNew.deleteThisElement(9);
-        lstNew.printList();
-        System.out.println(lstNew.head.getKey());
-        System.out.println(lstNew.tail.getKey());
+      // lstNew.deleteThisElement(9);
+        //lstNew.printList();
+
+        MyLinkedList.Iterator it= lstNew.Iterator();
+
+        while(it.hasNext()){
+            System.out.print(it.next().getKey());
+        }
+
+//        System.out.println(lstNew.head.getKey());
+//        System.out.println(lstNew.tail.getKey());
 
     }
 }
