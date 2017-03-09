@@ -13,7 +13,7 @@ public class LinkedList1 {
         list.add(7);
         list.add(8);
         list.add(3,8);
-       list.remove();
+        list.remove();
 
         System.out.println(list.getFirst());
         System.out.println(list.toString());
